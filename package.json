@@ -1,0 +1,29 @@
+{
+  "name": "zeuss",
+  "version": "1.0.0",
+  "description": "Crossbrowser configuration on the fly and some useful functionalities",
+  "main": "src/zeuss.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:acnalesso/zeuss.git"
+  },
+  "author": "Antonio Nalesso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acnalesso/zeuss/issues"
+  },
+  "homepage": "https://github.com/acnalesso/zeuss",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-jasmine-node": "^0.2.1",
+    "jasmine-core": "^2.2.0",
+    "jasmine-node": "^2.0.0",
+    "karma": "^0.12.31",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
+}
