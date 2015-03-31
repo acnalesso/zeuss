@@ -1,4 +1,6 @@
-module.exports = function(browsers) {
+module.exports = function(browsers, browserKey) {
+
+  this.browserKey = browserKey === undefined ? "browser" : browserKey;
 
   this.defaultConfig = {};
 
@@ -29,11 +31,11 @@ module.exports = function(browsers) {
                 var tmpConfig = {
                     base: 'BrowserStack',
                     device: deviceName,
-                    browser: browserName,
                     os: this.getOsName(os),
                     os_version: osVersion,
                     browser_version: browserVersion
                 };
+                tmpConfig[this.browserKey] = browserName;
                 browsers[launcherName] = this._addDefaultConfigTo(tmpConfig);
             }
           } else {
@@ -42,11 +44,11 @@ module.exports = function(browsers) {
             var tmpConfig = {
                 base: 'BrowserStack',
                 device: '',
-                browser: browserName,
                 os: this.getOsName(os),
                 os_version: osVersion,
                 browser_version: browserVersion
             };
+            tmpConfig[this.browserKey] = browserName;
             browsers[launcherName] = this._addDefaultConfigTo(tmpConfig);
           }
         }
