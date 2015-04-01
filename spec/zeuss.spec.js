@@ -74,4 +74,18 @@ describe('Zeuss', function () {
     expect(generated['browserstack.key']).toEqual('232');
     expect(generated['browserstack.local']).toEqual(true);
   });
+
+  it('generates a list of launchers', function () {
+    var browsers = {};
+    var zeuss = new Zeuss(browsers, "browserName");
+
+    zeuss.addCustomLaunchers({
+      mac: { 'Yosemite': { browsers: ['Safari-8.0'] } }
+    });
+
+    var customLaunchersList = zeuss.getCustomLaunchersList();
+
+    expect(customLaunchersList.length).toEqual(1);
+    expect(customLaunchersList[0]).toEqual('bs_mac_Yosemite_Safari');
+  });
 });

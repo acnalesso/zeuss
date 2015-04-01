@@ -1,8 +1,16 @@
 module.exports = function(browsers, browserKey) {
 
+  this.browsers = browsers;
   this.browserKey = browserKey === undefined ? "browser" : browserKey;
-
   this.defaultConfig = {};
+
+  this.getCustomLaunchersList = function() {
+    var launcherNames = [];
+    for (launcherName in this.browsers) {
+        launcherNames.push(launcherName);
+    }
+    return launcherNames;
+  };
 
   this.getOsName = function(osName) {
     var osNames = { mac: "OS X", iphone: "IOS", windows: "Windows", linux: "Linux", windows: "Windows", android: "Android" };
